@@ -1,6 +1,6 @@
 <template>
 	<div class="hello">
-		<h1>Homepage</h1>
+		<h1>Welcome to administrator page</h1>
 		<h2>{{msg}}</h2>
 	</div>
 </template>
@@ -9,12 +9,11 @@
 	export default {
 		data () {
 			return {
-				msg: 'Hello World!'
+				msg: 'The superheros'
 			}
 		}
 	}
 </script>
-	<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 	h1, h2 {
 		font-weight: normal;

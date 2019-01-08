@@ -1,41 +1,50 @@
 {
-  "name": "ironclaw-rpg-index",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "register-service-worker": "^1.5.2",
-    "vue": "^2.5.21",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-eslint": "^3.2.0",
-    "@vue/cli-plugin-pwa": "^3.2.0",
-    "@vue/cli-service": "^3.2.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.8.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "lint-staged": "^8.1.0",
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.1",
-    "vue-template-compiler": "^2.5.21"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.js": [
-      "vue-cli-service lint",
-      "git add"
-    ],
-    "*.vue": [
-      "vue-cli-service lint",
-      "git add"
-    ]
-  }
+	"name": "ironclaw-rpg-index",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"postinstall": "npm run build",
+		"serve": "touch .environment_config && eval `cat .environment_config` vue-cli-service serve",
+		"build": "touch .environment_config && eval `cat .environment_config` vue-cli-service build",
+		"lint": "touch .environment_config && eval `cat .environment_config` vue-cli-service lint",
+		"start": "touch .environment_config && eval `cat .environment_config` node app.js"
+	},
+	"dependencies": {
+		"bcrypt": "^3.0.3",
+		"body-parser": "^1.18.3",
+		"jsonwebtoken": "^8.4.0",
+		"pg-promise": "^8.5.4",
+		"register-service-worker": "^1.5.2",
+		"serve-static": "^1.13.2",
+		"sqlite3": "^4.0.4",
+		"vue": "^2.5.21",
+		"vue-router": "^3.0.1",
+		"vuetify": "^1.4.0",
+		"vuex": "^3.0.1"
+	},
+	"devDependencies": {
+		"@vue/cli-plugin-eslint": "^3.2.0",
+		"@vue/cli-plugin-pwa": "^3.2.0",
+		"@vue/cli-service": "^3.2.0",
+		"babel-eslint": "^10.0.1",
+		"eslint": "^5.8.0",
+		"eslint-plugin-vue": "^5.0.0",
+		"lint-staged": "^8.1.0",
+		"node-sass": "^4.9.0",
+		"sass-loader": "^7.0.1",
+		"vue-template-compiler": "^2.5.21"
+	},
+	"gitHooks": {
+		"pre-commit": "lint-staged"
+	},
+	"lint-staged": {
+		"*.js": [
+			"vue-cli-service lint",
+			"git add"
+		],
+		"*.vue": [
+			"vue-cli-service lint",
+			"git add"
+		]
+	}
 }
